@@ -147,10 +147,20 @@ class HAGENSupervisor:
                     y_pred_reshape_sigmoid_i = ss.fit_transform(y_pred_reshape_sigmoid_i)
                     threshold = np.quantile(y_pred_reshape_sigmoid_i, self._threshold)
                     
-                    #mse
+                    # For regression
                     # mae = metrics_sk.mean_absolute_error(y_truth_reshape_i, y_pred_reshape_sigmoid_i)
                     # mse = metrics_sk.mean_squared_error(y_truth_reshape_i, y_pred_reshape_sigmoid_i)
 
+                    #create folder for each epoch
+                    # if not os.path.exists(self._log_dir + "/" + str(epoch)):
+                    #     os.makedirs(self._log_dir + "/" + str(epoch))
+
+                    # save mse mae in txt file
+                    # with open(self._log_dir + "/" + str(epoch) +"/"+dataset + "_mae_mse.txt", 'a') as f:
+                    #     f.write(f' {i} {mae} {mse}\n')
+
+
+                    # For classification
                     y_pred_reshape_sigmoid_i[y_pred_reshape_sigmoid_i >= threshold] = 1
                     y_pred_reshape_sigmoid_i[y_pred_reshape_sigmoid_i < threshold] = 0
 
@@ -161,14 +171,14 @@ class HAGENSupervisor:
                     if not os.path.exists(self._log_dir + "/" + str(epoch)):
                         os.makedirs(self._log_dir + "/" + str(epoch))
 
-                    # save mse mae in txt file
-                    # with open(self._log_dir + "/" + str(epoch) +"/"+dataset + "_mae_mse.txt", 'a') as f:
-                    #     f.write(f' {i} {mae} {mse}\n')
 
                     # save f1 scores in txt file
-                    with open(self._log_dir + "/" + str(epoch) +"/"+ dataset + "_macro_micro.txt", 'a') as f:
+                    with open(self._log_dir + "/" + str(epoch) +"/macro_micro.txt", 'a') as f:
                         f.write(f' {i} {macro_f1} {micro_f1}\n')
                         
+                    
+
+
                     # make dir for each i
                     if not os.path.exists(self._log_dir + "/" + str(epoch) + "/" + str(i)):
                         os.makedirs(self._log_dir + "/" + str(epoch) + "/" + str(i))

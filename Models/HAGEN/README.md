@@ -1,5 +1,5 @@
 ----RUNNING HAGEN----
-1. Keep dataset in crime-data/CRIME_CHICAGO/
+1. In crime-data/CRIME_CHICAGO/ use generate_dataset.ipynb to generate train, val, test files 
 2. Make subfolder and keep the train, val, test files in the subfolder
 3. Generate yaml file accordingly
 4. change default value of config_filename to newly generate yaml file path
