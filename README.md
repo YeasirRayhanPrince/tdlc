@@ -4,10 +4,8 @@ Code for all the models can be found on the "Models" folder and instruction of h
 
 
 Original Model Repos:
-DeepCrime: 
-MiST:
-CrimeForecaster: https://github.com/sunjiao123sun/CrimeForecaster.git
-HAGEN: https://github.com/Rafa-zy/HAGEN.git
-ST-SHN:
-ST-HSL:
-AIST: https://github.com/YeasirRayhanPrince/aist.git
+1. DeepCrime, MiST, CrimeForecaster: https://github.com/sunjiao123sun/CrimeForecaster.git
+2. HAGEN: https://github.com/Rafa-zy/HAGEN.git
+3. ST-SHN:
+4. ST-HSL:
+5. AIST: https://github.com/YeasirRayhanPrince/aist.git
